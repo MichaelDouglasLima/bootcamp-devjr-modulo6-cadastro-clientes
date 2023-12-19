@@ -1,18 +1,6 @@
 
 var clientes = [];
 
-function validarNumero() {
-    numero = document.getElementById("inputNumber").value;
-
-    if (numero == "") {
-        mostrarErro("Informe um CEP Válido!");
-        preencherDados({});
-        document.getElementById("inputNumber").disabled = true;
-    } else {
-        save();
-    }
-}
-
 // Salvar um Cliente
 function save() {
     var novoCliente = {
@@ -46,14 +34,14 @@ function addNewRow(cliente) {
     newRow.insertCell().appendChild(idNode);
 
     // Inserindo Nome Completo do Cliente
-    var nomeCompletoNode = document.createTextNode(cliente.name + " " + cliente.sobrenome);
-    var newNameCell = newRow.insertCell();
-    newNameCell.appendChild(nomeCompletoNode);
+    var nameCompleteNode = document.createTextNode(cliente.name + " " + cliente.sobrenome);
+    var newNameCompleteCell = newRow.insertCell();
+    newNameCompleteCell.appendChild(nameCompleteNode);
 
     // Inserindo Endereco e Número do Cliente
     var addressNumberNode = document.createTextNode(cliente.address + ", " + cliente.number);
-    var newAddressCell = newRow.insertCell();
-    newAddressCell.appendChild(addressNumberNode);
+    var newAddressNumberCell = newRow.insertCell();
+    newAddressNumberCell.appendChild(addressNumberNode);
 
     // Inserindo CEP do Cliente
     var cepNode = document.createTextNode(cliente.cep);
@@ -94,8 +82,8 @@ function pesquisarCEP(cep) {
 
     $.getJSON(url, (response) => {
 
-        // Verificando explicitamente se o CEP informado não existe
-        if (response.erro == true) {
+        // Verificando se o CEP informado não existe
+        if (("erro" in response)) {
             mostrarErro("Não encontrado");
             preencherDados({});
             document.getElementById("inputNumber").disabled = true;
@@ -107,6 +95,19 @@ function pesquisarCEP(cep) {
         }
 
     });
+}
+
+// Vericando se o número está preenchido antes da submissão
+function validarNumero() {
+    numero = document.getElementById("inputNumber").value;
+
+    if (numero == "") {
+        mostrarErro("Informe um CEP Válido!");
+        preencherDados({});
+        document.getElementById("inputNumber").disabled = true;
+    } else {
+        save();
+    }
 }
 
 function preencherDados(response) {
