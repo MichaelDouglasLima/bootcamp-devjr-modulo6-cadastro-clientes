@@ -18,17 +18,17 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <form class="p-4">
+                    <form class="p-4" onsubmit="validarNumero(); return false;" id="formCliente">
                         <!-- Nome e Sobronome -->
                         <div class="row mb-3 mt-3">
                             <div class="col-sm-6">
                                 <label for="inputName" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="inputName">
+                                <input type="text" class="form-control" id="inputName" required>
                             </div>
 
                             <div class="col-sm-6">
                                 <label for="inputSobrenome" class="form-label">Sobrenome:</label>
-                                <input type="text" class="form-control" id="inputSobrenome">
+                                <input type="text" class="form-control" id="inputSobrenome" required>
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
 
                             <div class="row align-items-center">
                                 <div class="col-sm-3">
-                                    <input type="text" class="form-control" id="inputCEP" onblur="validarCEP()"> 
+                                    <input type="text" class="form-control" id="inputCEP" onblur="validarCEP()" required> 
                                 </div>
     
                                 <div class="col-sm-3 text-danger" id="error">
@@ -58,7 +58,7 @@
 
                             <div class="col-sm-2">
                                 <label for="inputNumber" class="form-label">Número:</label>
-                                <input type="text" class="form-control" id="inputNumber" disabled>
+                                <input type="text" class="form-control" id="inputNumber" disabled required>
                             </div>
                         </div>
 
@@ -95,7 +95,7 @@
         <section class="mb-5 mt-5">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <table class="table">
+                    <table class="table" id="clientesTable">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
