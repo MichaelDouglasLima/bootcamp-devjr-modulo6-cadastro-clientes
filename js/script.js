@@ -41,6 +41,7 @@ function addNewRow(cliente) {
     // Inserindo Endereco e Número do Cliente
     var addressNumberNode = document.createTextNode(cliente.address + ", " + cliente.number);
     var newAddressNumberCell = newRow.insertCell();
+    newAddressNumberCell.className = "d-none d-sm-table-cell";
     newAddressNumberCell.appendChild(addressNumberNode);
 
     // Inserindo CEP do Cliente
@@ -49,7 +50,11 @@ function addNewRow(cliente) {
     
     // Inserindo Bairro do Cliente
     var neighborhoodNode = document.createTextNode(cliente.neighborhood);
-    newRow.insertCell().appendChild(neighborhoodNode);
+    var neighborhoodCell = newRow.insertCell();
+    neighborhoodCell.className = "d-none d-sm-table-cell";
+    neighborhoodCell.appendChild(neighborhoodNode);
+
+   // newRow.insertCell().appendChild(neighborhoodNode);
 
     // Inserindo Cidade do Cliente
     var cityNode = document.createTextNode(cliente.city);

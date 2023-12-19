@@ -21,12 +21,12 @@
                     <form class="p-4" onsubmit="validarNumero(); return false;" id="formCliente">
                         <!-- Nome e Sobronome -->
                         <div class="row mb-3 mt-3">
-                            <div class="col-sm-6">
+                            <div class="col-12 col-sm-6">
                                 <label for="inputName" class="form-label">Nome:</label>
                                 <input type="text" class="form-control" id="inputName" required>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-12 col-sm-6">
                                 <label for="inputSobrenome" class="form-label">Sobrenome:</label>
                                 <input type="text" class="form-control" id="inputSobrenome" required>
                             </div>
@@ -39,11 +39,11 @@
                             </div>
 
                             <div class="row align-items-center">
-                                <div class="col-sm-3">
+                                <div class="col-6 col-sm-3">
                                     <input type="text" class="form-control" id="inputCEP" onblur="validarCEP()" required> 
                                 </div>
     
-                                <div class="col-sm-3 text-danger" id="error">
+                                <div class="col-6 col-sm-3 text-danger" id="error">
                                     
                                 </div>
                             </div>
@@ -51,12 +51,12 @@
 
                         <!-- Endereço e Número -->
                         <div class="row mb-3 mt-3">
-                            <div class="col-sm-10">
+                            <div class="col-12 col-sm-10">
                                 <label for="inputAddress" class="form-label">Endereço:</label>
                                 <input type="text" class="form-control" id="inputAddress" disabled>
                             </div>
 
-                            <div class="col-sm-2">
+                            <div class="col-6 col-sm-2">
                                 <label for="inputNumber" class="form-label">Número:</label>
                                 <input type="text" class="form-control" id="inputNumber" disabled required>
                             </div>
@@ -64,12 +64,12 @@
 
                         <!-- Bairro e Cidade -->
                         <div class="row mb-3 mt-3">
-                            <div class="col-sm-6">
+                            <div class="col-12 col-sm-6">
                                 <label for="inputNeighborhood" class="form-label">Bairro:</label>
                                 <input type="text" class="form-control" id="inputNeighborhood" disabled>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-12 col-sm-6">
                                 <label for="inputCity" class="form-label">Cidade:</label>
                                 <input type="text" class="form-control" id="inputCity" disabled>
                             </div>
@@ -100,9 +100,9 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nome Completo</th>
-                                <th scope="col">Endereço</th>
+                                <th scope="col" class="d-none d-sm-table-cell">Endereço</th>
                                 <th scope="col">CEP</th>
-                                <th scope="col">Bairro</th>
+                                <th scope="col" class="d-none d-sm-table-cell">Bairro</th>
                                 <th scope="col">Cidade</th>
                                 <th scope="col">Estado</th>
                             </tr>
